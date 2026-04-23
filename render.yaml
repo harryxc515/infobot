@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: telegram-info-bot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: BOT_USERNAME
+        sync: false
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
